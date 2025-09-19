@@ -1,43 +1,264 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel= "stylesheet" type ="text/css" href="estilos_fondos.css"> 
-        <title> Javier </title>
-	<link rel="shortcut icon" href="icon.jpg">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier - Nike</title>
+    <link rel="icon" href="icon.jpg" type="image/jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 60px;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+        }
+
+        .nav-link:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Efectos para diferentes enlaces */
+        .nav-link:nth-child(1) {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            color: #333;
+        }
+
+        .nav-link:nth-child(2) {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            color: #333;
+        }
+
+        .nav-link:nth-child(3) {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            color: #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .brand {
+                font-size: 2.5rem;
+            }
+
+            .name {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .nav-link {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .name {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+
+        /* Partículas decorativas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <h1 class="brand">Nike</h1>
+        <h2 class="name">Javier</h2>
         
-    </head>
-    <body>
-           
+        <nav class="navigation">
+            <a href="CV.html" class="nav-link">📄 Curriculum Personal</a>
+            <a href="MovieFavorite.html" class="nav-link">🎬 Películas Favoritas</a>
+            <a href="VideogameFavorite.html" class="nav-link">🎮 Videojuego Favorito</a>
+        </nav>
+    </div>
 
+    <script>
+        // Crear partículas animadas
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
 
-        <font color="WHITE"><font face="Arial">
-            <center><h1>Nike </h1></center>
-		<br>
-		<br>
-		<br>
-		<br>
-		<center><p><h1>Javier</h1></p></center>
-		<br>
-		<br>
-		<br>
-		<br>	
-              <center> 
-                <font color="WHITE"><font face="Arial"> 
-                  <p> <h2> <a href="CV.html">Ir a Curriculum Personal</a> </h2> </p>
-                </center>
-                <center> 
-                    <font color="Black"><font face="Arial"> 
-                      <p> <h2> <a href="MovieFavorite.html">Ir a Peliculas Favoritas</a> </h2> </p>
-                </center>
-                <center> 
-                    <font color="Black"><font face="Arial"> 
-                      <p> <h2> <a href="VideogameFavorite.html">Ir a Videojuego Favorito</a> </h2> </p>
-                    </center>
-		<center> 
-                   
-        
-     
-       
-    </body>
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
 
-    </html>
+        // Inicializar partículas
+        createParticles();
+
+        // Efecto de entrada suave para los enlaces
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach((link, index) => {
+                link.style.animationDelay = (index * 0.2) + 's';
+                link.style.animation = 'fadeInUp 0.6s ease-out forwards';
+            });
+        });
+    </script>
+</body>
+</html>
