@@ -1,115 +1,444 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel= "stylesheet" type ="text/css" href="estilos_fondos_2.css"> 
-        <title>Curriculum personal</title>
-        <link rel="shortcut icon" href="favicon.png">
-    </head>
-    <body>
-        
-        <font color="WHITE"><font face="Kaiti">
-            <center><h1>Curriculum Personal</h1></center>
-       	<table style="width:100%">
-  		<tr>
-    			<center><th><b>Datos personales</b></th></center>
-    			
- 		 </tr>
-  				<tr>
-    			<td>Nombre:</td>
-    			<td>Luis Pedro Hernandez Garcia</td>
-		</tr>
-  				<tr>
-    			<td>Codigo de  identificacioin personal:</td>
-    			<td>2995258520101</td>
-  		</tr>
-				<tr>
-			<td>Direcion:</td>
-			<td>10 calle A zona 7 Colonia El rodeo, Guatemala,Guatemla</td>
-		</tr>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Personal - Luis Pedro Hernández</title>
+    <link rel="icon" href="sneakers.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-				<tr>
-			<td>No. Celular:</td>
-			<td>30808120</td>
-		</tr>				
-				<tr>
-			<td>Correo electronico:</td>
-			<td>lphg3940@gmail.com</td>
-		</tr>		
-  		
-	</table>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
 
-	<table style="width:100%">
-  		<tr>
-    			<center><th><b>Formacion</b></th></center>
-    			
- 		 </tr>
-  				<tr>
-    			<td>Colegio San Vicente de Paul</td>
-    			<td>Primaria / 2006 - 2012</td>
-		</tr>
-  				<tr>
-    			<td>Centro Educativo Tecnico Laboral Kinal</td>
-    			<td>Basicos/ 2013 - 2015</td>
-  		</tr>
-				<tr>
-			<td>Colegio Panamericano</td>
-			<td>Bachiller en Computacion/ 2015 - 2018</td>
-		</tr>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            animation: slideInUp 0.8s ease-out;
+        }
 
-				<tr>
-			<td>Universidad de San Carlos de Guatemala</td>
-			<td>Ingenieria en Ciencias y sistemas/ 2019 - Actualidad</td>
-		</tr>				
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-	</table>
-		<font face="CordiaUPC"><p><h1>Habilidades</p><h1>
-		<ul>
-			<li>Trabajo en equipo</li>
-			<li>Empatia</li>
-			<li>Expresion verbal</li>
-			<li>Trabajo individual</li>
-			<li>Concentracion</li>
-			<li>Presicion</li>
-		</ul>
-		
-		<p><h1>Obetivos en la carrera</p><h1>
-		<ul>
-			<li>Poder llegar a tener un amplio conocimiento sobre la programacion</li>
-			<li>Poder crecer como persona y ser mejor cada dia</li>
-			<li>Poder seguir creciendo White Space y llegar ser una compa�ia que ayude a la facultad</li>
-			<li>Por ultimo poder graduarme</li>
-		</ul>	
-			
-                
-            </body>
-<font color="WHITE"><font face="Arial"> 
-                  <h3> <a href="INDEX.html">Ir a Index</a> </h3>
-                
+        .header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-  </html>
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
 
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
 
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
 
+        .content {
+            padding: 40px;
+        }
 
+        .section {
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
 
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
+        .section h2::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
 
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
 
+        .info-table tr {
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
 
+        .info-table tr:hover {
+            background-color: #f8f9ff;
+        }
 
+        .info-table td {
+            padding: 15px 10px;
+            vertical-align: top;
+        }
 
+        .info-table td:first-child {
+            font-weight: 600;
+            color: #555;
+            width: 30%;
+            border-right: 2px solid #f0f0f0;
+        }
 
+        .info-table td:last-child {
+            color: #666;
+            padding-left: 20px;
+        }
 
+        .education-item {
+            background: linear-gradient(135deg, #f8f9ff, #ffffff);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
 
+        .education-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
 
+        .education-item h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
 
+        .education-item .period {
+            color: #888;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
 
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
 
+        .skill-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
 
+        .skill-item:hover::before {
+            left: 100%;
+        }
 
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
 
+        .objectives-list {
+            list-style: none;
+            padding: 0;
+        }
 
+        .objectives-list li {
+            background: #f8f9ff;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            position: relative;
+            transition: all 0.3s ease;
+        }
 
+        .objectives-list li::before {
+            content: '🎯';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
 
+        .objectives-list li:hover {
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            transform: translateX(10px);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9ff;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .info-table td:first-child {
+                width: 40%;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-icons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .info-table td {
+                padding: 10px 5px;
+            }
+
+            .info-table td:first-child {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 5px;
+            }
+
+            .info-table td:last-child {
+                padding-left: 5px;
+                padding-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Curriculum Personal</h1>
+            <p class="subtitle">Luis Pedro Hernández García</p>
+        </header>
+
+        <div class="content">
+            <!-- Datos Personales -->
+            <section class="section">
+                <h2>👤 Datos Personales</h2>
+                <table class="info-table">
+                    <tr>
+                        <td>Nombre Completo</td>
+                        <td>Luis Pedro Hernández García</td>
+                    </tr>
+                    <tr>
+                        <td>Código de Identificación</td>
+                        <td>2995258520101</td>
+                    </tr>
+                    <tr>
+                        <td>Dirección</td>
+                        <td>10 calle A zona 7, Colonia El Rodeo, Guatemala, Guatemala</td>
+                    </tr>
+                    <tr>
+                        <td>Número Celular</td>
+                        <td>+502 30808120</td>
+                    </tr>
+                    <tr>
+                        <td>Correo Electrónico</td>
+                        <td>lphg3940@gmail.com</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Formación Académica -->
+            <section class="section">
+                <h2>🎓 Formación Académica</h2>
+                <div class="education-item">
+                    <h3>Universidad de San Carlos de Guatemala</h3>
+                    <p class="period">Ingeniería en Ciencias y Sistemas | 2019 - Actualidad</p>
+                </div>
+                <div class="education-item">
+                    <h3>Colegio Panamericano</h3>
+                    <p class="period">Bachiller en Computación | 2015 - 2018</p>
+                </div>
+                <div class="education-item">
+                    <h3>Centro Educativo Técnico Laboral Kinal</h3>
+                    <p class="period">Educación Básica | 2013 - 2015</p>
+                </div>
+                <div class="education-item">
+                    <h3>Colegio San Vicente de Paul</h3>
+                    <p class="period">Educación Primaria | 2006 - 2012</p>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section class="section">
+                <h2>💪 Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Trabajo en Equipo</div>
+                    <div class="skill-item">Empatía</div>
+                    <div class="skill-item">Expresión Verbal</div>
+                    <div class="skill-item">Trabajo Individual</div>
+                    <div class="skill-item">Concentración</div>
+                    <div class="skill-item">Precisión</div>
+                </div>
+            </section>
+
+            <!-- Objetivos Profesionales -->
+            <section class="section">
+                <h2>🎯 Objetivos en la Carrera</h2>
+                <ul class="objectives-list">
+                    <li>Adquirir un amplio conocimiento sobre programación y desarrollo de software</li>
+                    <li>Crecer como persona y profesional, mejorando continuamente mis habilidades</li>
+                    <li>Contribuir al crecimiento de White Space y convertirla en una empresa que apoye a la facultad</li>
+                    <li>Graduarme exitosamente como Ingeniero en Ciencias y Sistemas</li>
+                </ul>
+            </section>
+
+            <div style="text-align: center;">
+                <a href="INDEX.html" class="back-button">⬅ Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
