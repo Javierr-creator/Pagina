@@ -1,40 +1,602 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel= "stylesheet" type ="text/css" href="estilos_fondos_3.css"> 
-        <title>Favorite Movie</title>
-	<link rel="shortcut icon" href="favicon.png">
-        
-    </head>
-    <body>
-        
-		<font color="White"><font face="Arial Black">
-			<center><h1>Favorite Movie</h1></center>
-			<br></br>
-			<center><h1>Pixels</h1></center>
-			<br></br>
-			<center> 
-				<font color="WHITE"><font face="Arial"> 
-					<p><h2>Pixels es una película de comedia y ciencia ficción donde los clásicos videojuegos de los años 80 cobran vida y atacan la Tierra. 
-					Para salvar al mundo, Sam Brenner, Ludlow Lamonsoff y otros expertos en videojuegos deben usar sus habilidades en los videojuegos 
-					para combatir a los alienígenas disfrazados como sus enemigos pixelados favoritos.</h2></p>
-				<br></br>
-				<font color="WHITE"><font face="Arial"> 
-					<p><h2>Esta película es una de mis favoritas porque combina nostalgia, acción y comedia de manera entretenida. 
-					Me gusta cómo los personajes utilizan sus conocimientos de videojuegos para resolver problemas reales, y cómo la historia mezcla humor 
-					con momentos de tensión. Además, me identifico con la idea de que a veces lo que amamos en la infancia puede enseñarnos lecciones importantes 
-					para la vida adulta, y cómo la colaboración y la creatividad son fundamentales para superar desafíos. 
-					Pixels logra transmitir estas ideas mientras mantiene un tono ligero y divertido, por lo que se ha convertido en una película que disfruto mucho.</h2></p>
-			</center>
-		
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixels - Mi Película Favorita</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-	<center><iframe width="560" height="315" src="https://www.youtube.com/embed/g4Hbz2jLxvQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+        /* Animated background */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
 
-	
-	<font color="WHITE"><font face="Arial"> 
-                  <h3> <a href="INDEX.html">Ir a Index</a> </h3>
-     
-    </body>
+        .pixel {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00ff41;
+            animation: pixelFloat 8s infinite linear;
+            opacity: 0.6;
+        }
 
-    </html>
+        @keyframes pixelFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: slideInDown 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .movie-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00ff41;
+            text-shadow: 0 0 20px #00ff41;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41, 0 0 40px #00ff41;
+            }
+            to {
+                text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+            }
+        }
+
+        .content-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: slideInUp 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        .description::first-letter {
+            font-size: 3rem;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin: 0 10px 0 0;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 50px 0;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .video-wrapper {
+            position: relative;
+            display: inline-block;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: scale(1.02);
+            box-shadow: 0 35px 70px rgba(0, 255, 65, 0.3);
+        }
+
+        .video-wrapper iframe {
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .movie-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(0, 255, 65, 0.05));
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 255, 65, 0.2);
+        }
+
+        .info-card h3 {
+            color: #00ff41;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 40px auto;
+            display: block;
+            width: fit-content;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .back-button:hover::before {
+            left: 100%;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Movie Poster Styles */
+        .poster-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .poster-wrapper {
+            position: relative;
+            display: inline-block;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            max-width: 400px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 3px;
+        }
+
+        .poster-wrapper:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 35px 70px rgba(0, 255, 65, 0.4);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 17px;
+            transition: all 0.3s ease;
+        }
+
+        .poster-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .poster-wrapper:hover .poster-overlay {
+            transform: translateY(0);
+        }
+
+        .poster-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .poster-info p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .rating {
+            text-align: center;
+        }
+
+        .rating span {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            display: block;
+            filter: drop-shadow(0 0 5px #f9ca24);
+        }
+
+        .rating p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .poster-wrapper {
+                max-width: 300px;
+            }
+
+            .poster-overlay {
+                position: static;
+                transform: none;
+                background: rgba(0, 0, 0, 0.8);
+                border-radius: 0 0 17px 17px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .movie-title {
+                font-size: 2rem;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .description {
+                font-size: 1.1rem;
+            }
+
+            .movie-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .video-wrapper iframe {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .movie-title {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .video-wrapper iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation" id="pixelContainer"></div>
+
+    <div class="container">
+        <!-- Floating gaming elements -->
+        <div class="floating-element">🎮</div>
+        <div class="floating-element">👾</div>
+        <div class="floating-element">🕹️</div>
+
+        <header class="header">
+            <h1 class="main-title">Mi Película Favorita</h1>
+            <h2 class="movie-title">PIXELS</h2>
+        </header>
+
+        <!-- Movie Poster Section -->
+        <section class="content-section">
+            <div class="poster-container">
+                <div class="poster-wrapper">
+                    <img src="pixels_poster.jpg" alt="Pixels Movie Poster" class="movie-poster">
+                    <div class="poster-overlay">
+                        <div class="poster-info">
+                            <h3>🎬 PIXELS (2015)</h3>
+                            <p>Comedia • Ciencia Ficción • Acción</p>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <p>Mi calificación personal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="movie-info">
+                <div class="info-card">
+                    <h3>🎬 Sinopsis</h3>
+                    <p class="description">
+                        Pixels es una película de comedia y ciencia ficción donde los clásicos videojuegos de los años 80 cobran vida y atacan la Tierra. 
+                        Para salvar al mundo, Sam Brenner, Ludlow Lamonsoff y otros expertos en videojuegos deben usar sus habilidades 
+                        para combatir a los alienígenas disfrazados como sus enemigos pixelados favoritos.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>❤️ Por qué me gusta</h3>
+                    <p class="description">
+                        Esta película es una de mis favoritas porque combina nostalgia, acción y comedia de manera entretenida. 
+                        Me gusta cómo los personajes utilizan sus conocimientos de videojuegos para resolver problemas reales, y cómo la historia mezcla humor 
+                        con momentos de tensión. Además, me identifico con la idea de que a veces lo que amamos en la infancia puede enseñarnos lecciones importantes 
+                        para la vida adulta, y cómo la colaboración y la creatividad son fundamentales para superar desafíos. 
+                        Pixels logra transmitir estas ideas mientras mantiene un tono ligero y divertido.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/g4Hbz2jLxvQ" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <a href="INDEX.html" class="back-button">⬅ Volver al Inicio</a>
+    </div>
+
+    <script>
+        // Create animated pixel background
+        function createPixelBackground() {
+            const container = document.getElementById('pixelContainer');
+            const pixelCount = 20;
+            const colors = ['#00ff41', '#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24'];
+
+            for (let i = 0; i < pixelCount; i++) {
+                const pixel = document.createElement('div');
+                pixel.className = 'pixel';
+                pixel.style.left = Math.random() * 100 + '%';
+                pixel.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                pixel.style.animationDelay = Math.random() * 8 + 's';
+                pixel.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                container.appendChild(pixel);
+            }
+        }
+
+        // Initialize background animation
+        createPixelBackground();
+
+        // Add scroll animations
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.content-section');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Video interaction
+        const videoWrapper = document.querySelector('.video-wrapper');
+        const iframe = videoWrapper.querySelector('iframe');
+
+        videoWrapper.addEventListener('mouseenter', () => {
+            iframe.style.transform = 'scale(1.02)';
+        });
+
+        videoWrapper.addEventListener('mouseleave', () => {
+            iframe.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
